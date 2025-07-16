@@ -1,0 +1,2 @@
+# rdi
+RDI Installation script
