@@ -1,0 +1,276 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333">Employee Database - Entity Relationship Diagram</text>
+  
+  <!-- EMPLOYEE Entity -->
+  <g transform="translate(50, 60)">
+    <rect width="280" height="320" fill="white" stroke="#333" stroke-width="2" rx="8"/>
+    <rect width="280" height="40" fill="#4a90e2" stroke="#333" stroke-width="2" rx="8"/>
+    <rect width="280" height="40" fill="#4a90e2" stroke="none"/>
+    <text x="140" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">EMPLOYEE</text>
+    
+    <!-- Attributes -->
+    <text x="10" y="60" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d32f2f">employee_id</text>
+    <text x="260" y="60" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">UUID (PK)</text>
+    <line x1="10" y1="65" x2="270" y2="65" stroke="#eee"/>
+    
+    <text x="10" y="80" font-family="Arial, sans-serif" font-size="12" fill="#333">first_name</text>
+    <text x="260" y="80" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(50)</text>
+    <line x1="10" y1="85" x2="270" y2="85" stroke="#eee"/>
+    
+    <text x="10" y="100" font-family="Arial, sans-serif" font-size="12" fill="#333">last_name</text>
+    <text x="260" y="100" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(50)</text>
+    <line x1="10" y1="105" x2="270" y2="105" stroke="#eee"/>
+    
+    <text x="10" y="120" font-family="Arial, sans-serif" font-size="12" fill="#333">middle_name</text>
+    <text x="260" y="120" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(50)</text>
+    <line x1="10" y1="125" x2="270" y2="125" stroke="#eee"/>
+    
+    <text x="10" y="140" font-family="Arial, sans-serif" font-size="12" fill="#333">date_of_birth</text>
+    <text x="260" y="140" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">DATE</text>
+    <line x1="10" y1="145" x2="270" y2="145" stroke="#eee"/>
+    
+    <text x="10" y="160" font-family="Arial, sans-serif" font-size="12" fill="#333">gender</text>
+    <text x="260" y="160" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(10)</text>
+    <line x1="10" y1="165" x2="270" y2="165" stroke="#eee"/>
+    
+    <text x="10" y="180" font-family="Arial, sans-serif" font-size="12" fill="#333">nationality</text>
+    <text x="260" y="180" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(50)</text>
+    <line x1="10" y1="185" x2="270" y2="185" stroke="#eee"/>
+    
+    <text x="10" y="200" font-family="Arial, sans-serif" font-size="12" fill="#333">marital_status</text>
+    <text x="260" y="200" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(20)</text>
+    <line x1="10" y1="205" x2="270" y2="205" stroke="#eee"/>
+    
+    <text x="10" y="220" font-family="Arial, sans-serif" font-size="12" fill="#333">social_security_number</text>
+    <text x="260" y="220" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(20)</text>
+    <line x1="10" y1="225" x2="270" y2="225" stroke="#eee"/>
+    
+    <text x="10" y="240" font-family="Arial, sans-serif" font-size="12" fill="#333">created_at</text>
+    <text x="260" y="240" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">TIMESTAMP</text>
+    <line x1="10" y1="245" x2="270" y2="245" stroke="#eee"/>
+    
+    <text x="10" y="260" font-family="Arial, sans-serif" font-size="12" fill="#333">updated_at</text>
+    <text x="260" y="260" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">TIMESTAMP</text>
+  </g>
+  
+  <!-- CONTACT_INFO Entity -->
+  <g transform="translate(870, 60)">
+    <rect width="280" height="360" fill="white" stroke="#333" stroke-width="2" rx="8"/>
+    <rect width="280" height="40" fill="#4a90e2" stroke="#333" stroke-width="2" rx="8"/>
+    <rect width="280" height="40" fill="#4a90e2" stroke="none"/>
+    <text x="140" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">CONTACT_INFO</text>
+    
+    <!-- Attributes -->
+    <text x="10" y="60" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d32f2f">contact_id</text>
+    <text x="260" y="60" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">UUID (PK)</text>
+    <line x1="10" y1="65" x2="270" y2="65" stroke="#eee"/>
+    
+    <text x="10" y="80" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1976d2">employee_id</text>
+    <text x="260" y="80" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">UUID (FK)</text>
+    <line x1="10" y1="85" x2="270" y2="85" stroke="#eee"/>
+    
+    <text x="10" y="100" font-family="Arial, sans-serif" font-size="12" fill="#333">email</text>
+    <text x="260" y="100" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(100)</text>
+    <line x1="10" y1="105" x2="270" y2="105" stroke="#eee"/>
+    
+    <text x="10" y="120" font-family="Arial, sans-serif" font-size="12" fill="#333">phone_primary</text>
+    <text x="260" y="120" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(20)</text>
+    <line x1="10" y1="125" x2="270" y2="125" stroke="#eee"/>
+    
+    <text x="10" y="140" font-family="Arial, sans-serif" font-size="12" fill="#333">phone_secondary</text>
+    <text x="260" y="140" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(20)</text>
+    <line x1="10" y1="145" x2="270" y2="145" stroke="#eee"/>
+    
+    <text x="10" y="160" font-family="Arial, sans-serif" font-size="12" fill="#333">address_line1</text>
+    <text x="260" y="160" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(200)</text>
+    <line x1="10" y1="165" x2="270" y2="165" stroke="#eee"/>
+    
+    <text x="10" y="180" font-family="Arial, sans-serif" font-size="12" fill="#333">address_line2</text>
+    <text x="260" y="180" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(200)</text>
+    <line x1="10" y1="185" x2="270" y2="185" stroke="#eee"/>
+    
+    <text x="10" y="200" font-family="Arial, sans-serif" font-size="12" fill="#333">city</text>
+    <text x="260" y="200" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(100)</text>
+    <line x1="10" y1="205" x2="270" y2="205" stroke="#eee"/>
+    
+    <text x="10" y="220" font-family="Arial, sans-serif" font-size="12" fill="#333">state</text>
+    <text x="260" y="220" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(100)</text>
+    <line x1="10" y1="225" x2="270" y2="225" stroke="#eee"/>
+    
+    <text x="10" y="240" font-family="Arial, sans-serif" font-size="12" fill="#333">postal_code</text>
+    <text x="260" y="240" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(20)</text>
+    <line x1="10" y1="245" x2="270" y2="245" stroke="#eee"/>
+    
+    <text x="10" y="260" font-family="Arial, sans-serif" font-size="12" fill="#333">country</text>
+    <text x="260" y="260" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(100)</text>
+    <line x1="10" y1="265" x2="270" y2="265" stroke="#eee"/>
+    
+    <text x="10" y="280" font-family="Arial, sans-serif" font-size="12" fill="#333">emergency_contact_name</text>
+    <text x="260" y="280" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(100)</text>
+    <line x1="10" y1="285" x2="270" y2="285" stroke="#eee"/>
+    
+    <text x="10" y="300" font-family="Arial, sans-serif" font-size="12" fill="#333">emergency_contact_phone</text>
+    <text x="260" y="300" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(20)</text>
+    <line x1="10" y1="305" x2="270" y2="305" stroke="#eee"/>
+    
+    <text x="10" y="320" font-family="Arial, sans-serif" font-size="12" fill="#333">emergency_contact_relation</text>
+    <text x="260" y="320" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(50)</text>
+    <line x1="10" y1="325" x2="270" y2="325" stroke="#eee"/>
+    
+    <text x="10" y="340" font-family="Arial, sans-serif" font-size="12" fill="#333">created_at</text>
+    <text x="260" y="340" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">TIMESTAMP</text>
+  </g>
+  
+  <!-- EMPLOYMENT_INFO Entity -->
+  <g transform="translate(50, 450)">
+    <rect width="280" height="340" fill="white" stroke="#333" stroke-width="2" rx="8"/>
+    <rect width="280" height="40" fill="#4a90e2" stroke="#333" stroke-width="2" rx="8"/>
+    <rect width="280" height="40" fill="#4a90e2" stroke="none"/>
+    <text x="140" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">EMPLOYMENT_INFO</text>
+    
+    <!-- Attributes -->
+    <text x="10" y="60" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d32f2f">employment_id</text>
+    <text x="260" y="60" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">UUID (PK)</text>
+    <line x1="10" y1="65" x2="270" y2="65" stroke="#eee"/>
+    
+    <text x="10" y="80" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1976d2">employee_id</text>
+    <text x="260" y="80" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">UUID (FK)</text>
+    <line x1="10" y1="85" x2="270" y2="85" stroke="#eee"/>
+    
+    <text x="10" y="100" font-family="Arial, sans-serif" font-size="12" fill="#333">employee_number</text>
+    <text x="260" y="100" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(20)</text>
+    <line x1="10" y1="105" x2="270" y2="105" stroke="#eee"/>
+    
+    <text x="10" y="120" font-family="Arial, sans-serif" font-size="12" fill="#333">department</text>
+    <text x="260" y="120" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(100)</text>
+    <line x1="10" y1="125" x2="270" y2="125" stroke="#eee"/>
+    
+    <text x="10" y="140" font-family="Arial, sans-serif" font-size="12" fill="#333">position</text>
+    <text x="260" y="140" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(100)</text>
+    <line x1="10" y1="145" x2="270" y2="145" stroke="#eee"/>
+    
+    <text x="10" y="160" font-family="Arial, sans-serif" font-size="12" fill="#333">job_level</text>
+    <text x="260" y="160" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(50)</text>
+    <line x1="10" y1="165" x2="270" y2="165" stroke="#eee"/>
+    
+    <text x="10" y="180" font-family="Arial, sans-serif" font-size="12" fill="#333">employment_type</text>
+    <text x="260" y="180" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(50)</text>
+    <line x1="10" y1="185" x2="270" y2="185" stroke="#eee"/>
+    
+    <text x="10" y="200" font-family="Arial, sans-serif" font-size="12" fill="#333">hire_date</text>
+    <text x="260" y="200" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">DATE</text>
+    <line x1="10" y1="205" x2="270" y2="205" stroke="#eee"/>
+    
+    <text x="10" y="220" font-family="Arial, sans-serif" font-size="12" fill="#333">termination_date</text>
+    <text x="260" y="220" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">DATE</text>
+    <line x1="10" y1="225" x2="270" y2="225" stroke="#eee"/>
+    
+    <text x="10" y="240" font-family="Arial, sans-serif" font-size="12" fill="#333">employment_status</text>
+    <text x="260" y="240" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(20)</text>
+    <line x1="10" y1="245" x2="270" y2="245" stroke="#eee"/>
+    
+    <text x="10" y="260" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1976d2">manager_id</text>
+    <text x="260" y="260" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">UUID (FK)</text>
+    <line x1="10" y1="265" x2="270" y2="265" stroke="#eee"/>
+    
+    <text x="10" y="280" font-family="Arial, sans-serif" font-size="12" fill="#333">work_location</text>
+    <text x="260" y="280" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(100)</text>
+    <line x1="10" y1="285" x2="270" y2="285" stroke="#eee"/>
+    
+    <text x="10" y="300" font-family="Arial, sans-serif" font-size="12" fill="#333">salary</text>
+    <text x="260" y="300" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">DECIMAL(12,2)</text>
+    <line x1="10" y1="305" x2="270" y2="305" stroke="#eee"/>
+    
+    <text x="10" y="320" font-family="Arial, sans-serif" font-size="12" fill="#333">currency</text>
+    <text x="260" y="320" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(10)</text>
+  </g>
+  
+  <!-- EMPLOYEE_DETAILS Entity -->
+  <g transform="translate(870, 450)">
+    <rect width="280" height="340" fill="white" stroke="#333" stroke-width="2" rx="8"/>
+    <rect width="280" height="40" fill="#4a90e2" stroke="#333" stroke-width="2" rx="8"/>
+    <rect width="280" height="40" fill="#4a90e2" stroke="none"/>
+    <text x="140" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">EMPLOYEE_DETAILS</text>
+    
+    <!-- Attributes -->
+    <text x="10" y="60" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d32f2f">detail_id</text>
+    <text x="260" y="60" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">UUID (PK)</text>
+    <line x1="10" y1="65" x2="270" y2="65" stroke="#eee"/>
+    
+    <text x="10" y="80" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1976d2">employee_id</text>
+    <text x="260" y="80" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">UUID (FK)</text>
+    <line x1="10" y1="85" x2="270" y2="85" stroke="#eee"/>
+    
+    <text x="10" y="100" font-family="Arial, sans-serif" font-size="12" fill="#333">education_level</text>
+    <text x="260" y="100" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(50)</text>
+    <line x1="10" y1="105" x2="270" y2="105" stroke="#eee"/>
+    
+    <text x="10" y="120" font-family="Arial, sans-serif" font-size="12" fill="#333">university</text>
+    <text x="260" y="120" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(100)</text>
+    <line x1="10" y1="125" x2="270" y2="125" stroke="#eee"/>
+    
+    <text x="10" y="140" font-family="Arial, sans-serif" font-size="12" fill="#333">degree</text>
+    <text x="260" y="140" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(100)</text>
+    <line x1="10" y1="145" x2="270" y2="145" stroke="#eee"/>
+    
+    <text x="10" y="160" font-family="Arial, sans-serif" font-size="12" fill="#333">graduation_year</text>
+    <text x="260" y="160" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">INTEGER</text>
+    <line x1="10" y1="165" x2="270" y2="165" stroke="#eee"/>
+    
+    <text x="10" y="180" font-family="Arial, sans-serif" font-size="12" fill="#333">skills</text>
+    <text x="260" y="180" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">TEXT[]</text>
+    <line x1="10" y1="185" x2="270" y2="185" stroke="#eee"/>
+    
+    <text x="10" y="200" font-family="Arial, sans-serif" font-size="12" fill="#333">certifications</text>
+    <text x="260" y="200" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">TEXT[]</text>
+    <line x1="10" y1="205" x2="270" y2="205" stroke="#eee"/>
+    
+    <text x="10" y="220" font-family="Arial, sans-serif" font-size="12" fill="#333">languages</text>
+    <text x="260" y="220" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">TEXT[]</text>
+    <line x1="10" y1="225" x2="270" y2="225" stroke="#eee"/>
+    
+    <text x="10" y="240" font-family="Arial, sans-serif" font-size="12" fill="#333">previous_experience_years</text>
+    <text x="260" y="240" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">INTEGER</text>
+    <line x1="10" y1="245" x2="270" y2="245" stroke="#eee"/>
+    
+    <text x="10" y="260" font-family="Arial, sans-serif" font-size="12" fill="#333">employee_photo_url</text>
+    <text x="260" y="260" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">VARCHAR(500)</text>
+    <line x1="10" y1="265" x2="270" y2="265" stroke="#eee"/>
+    
+    <text x="10" y="280" font-family="Arial, sans-serif" font-size="12" fill="#333">performance_rating</text>
+    <text x="260" y="280" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">DECIMAL(3,2)</text>
+    <line x1="10" y1="285" x2="270" y2="285" stroke="#eee"/>
+    
+    <text x="10" y="300" font-family="Arial, sans-serif" font-size="12" fill="#333">last_promotion_date</text>
+    <text x="260" y="300" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">DATE</text>
+    <line x1="10" y1="305" x2="270" y2="305" stroke="#eee"/>
+    
+    <text x="10" y="320" font-family="Arial, sans-serif" font-size="12" fill="#333">next_review_date</text>
+    <text x="260" y="320" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#666">DATE</text>
+  </g>
+  
+  <!-- Relationship Lines -->
+  <!-- EMPLOYEE to CONTACT_INFO -->
+  <line x1="330" y1="220" x2="870" y2="220" stroke="#333" stroke-width="2"/>
+  <text x="600" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333" font-weight="bold">1:1</text>
+  
+  <!-- EMPLOYEE to EMPLOYMENT_INFO -->
+  <line x1="190" y1="380" x2="190" y2="450" stroke="#333" stroke-width="2"/>
+  <text x="140" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333" font-weight="bold">1:1</text>
+  
+  <!-- EMPLOYEE to EMPLOYEE_DETAILS -->
+  <line x1="330" y1="380" x2="600" y2="380" stroke="#333" stroke-width="2"/>
+  <line x1="600" y1="380" x2="600" y2="620" stroke="#333" stroke-width="2"/>
+  <line x1="600" y1="620" x2="870" y2="620" stroke="#333" stroke-width="2"/>
+  <text x="600" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333" font-weight="bold">1:1</text>
+  
+  <!-- Self-referencing relationship (manager) -->
+  <path d="M 50 710 Q 30 710 30 730 Q 30 750 50 750" stroke="#333" stroke-width="2" fill="none"/>
+  <text x="35" y="735" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333" font-weight="bold">manages</text>
+  
+
+</svg>
