@@ -1,6 +1,6 @@
 # rdi
 
-docker run -d \
+sudo docker run -d \
   --name employee_postgres \
   -e POSTGRES_DB=employee_db \
   -e POSTGRES_USER=admin \
