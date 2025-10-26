@@ -1,2 +1,5 @@
 /.idea
 /sample_db/.idea
+/.terraform
+terraform.tfstate
+.terraform.lock.hcl
