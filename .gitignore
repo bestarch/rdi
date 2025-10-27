@@ -8,3 +8,5 @@ terraform.tfstate.backup
 terraform.tfstate.backup
 /sample_db_mysql/.idea
 /sample_db_pg/.idea
+*.backup
+terraform.tfstate.backup
