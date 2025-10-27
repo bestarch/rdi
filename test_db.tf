@@ -104,6 +104,17 @@ resource "google_compute_instance" "postgres_vm" {
         if [ "$attempts" -le "$max_attempts" ]; then
             echo "employee_db.py executed successfully in $attempts attempts" >> $${log_file}
         fi
+
+        echo "Setting wal_level to 'logical' via ALTER SYSTEM" >> $${log_file}
+
+        if /usr/bin/docker exec employee_postgres psql -U admin -d employee_db -c "ALTER SYSTEM SET wal_level = 'logical';" >> $${log_file} 2>&1; then
+            echo "Reloading Postgres configuration" >> $${log_file}
+            /usr/bin/docker restart employee_postgres
+            /usr/bin/docker exec employee_postgres psql -U admin -d employee_db -tAc "SHOW wal_level;"  >> $${log_file} 
+        else
+            echo "Failed to set wal_level" >> $${log_file}
+        fi
+
         EOF
 }
 
