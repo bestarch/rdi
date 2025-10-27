@@ -76,8 +76,8 @@ resource "google_compute_instance" "postgres_vm" {
 
         echo "Repo https://github.com/bestarch/rdi.git cloned at location /opt/rdi" >> $${log_file}
 
-        # Change to sample_db folder
-        cd /opt/rdi/sample_db || exit 0  
+        # Change to sample_db_pg folder
+        cd /opt/rdi/sample_db_pg || exit 0
         pip3 install -r requirements.txt
 
         # Export Postgres connection env vars (matches container run above)
