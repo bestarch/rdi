@@ -20,12 +20,11 @@ rdi_db_host         = "redis-15732.c48754.asia-south1-1.gcp.cloud.rlrcp.com"
 rdi_db_port        = 15732
 rdi_db_username    = "default"
 rdi_db_password    = "admin"
-
 rdi_version = "1.15.0"
 
 
 # VPC and Subnet Configuration
 subnet_cidr        = "10.0.1.0/24"
 
-create_test_postgres_db = true
+create_test_postgres_db = false
 create_test_mysql_db = true

@@ -131,6 +131,6 @@ resource "google_compute_firewall" "allow_postgres" {
 }
 
 output "postgres_vm_external_ip" {
-    value = google_compute_instance.postgres_vm[0].network_interface[0].access_config[0].nat_ip
+    value = var.create_test_postgres_db ? google_compute_instance.postgres_vm[0].network_interface[0].access_config[0].nat_ip : null
     description = "External IP of the VM running Postgres container"
 }
