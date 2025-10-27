@@ -27,4 +27,5 @@ rdi_version = "1.15.0"
 # VPC and Subnet Configuration
 subnet_cidr        = "10.0.1.0/24"
 
-create_sample_db = true
+create_test_postgres_db = true
+create_test_mysql_db = true

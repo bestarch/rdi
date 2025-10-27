@@ -101,9 +101,14 @@ variable "firewall_tcp_name" {
   default     = "rdi-tcp-firewall"
 }
 
-
-variable "create_sample_db" {
+variable "create_test_postgres_db" {
   description = "Whether to create a sample Postgres database instance"
+  type        = bool
+  default     = true
+}
+
+variable "create_test_mysql_db" {
+  description = "Whether to create a sample MySQL database instance"
   type        = bool
   default     = true
 }
