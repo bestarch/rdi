@@ -1,14 +1,14 @@
 
 resource "google_compute_address" "pg_static_ip" {
   count = var.create_test_postgres_db ? 1 : 0
-  name   = "${var.prefix}-pg-static-ip"
+  name   = "${var.prefix}-pg-static-ip-${random_string.suffix.result}"
   region = var.region
   depends_on = [ google_compute_network.vpc ]
 }
 
 resource "google_compute_instance" "postgres_vm" {
     count = var.create_test_postgres_db ? 1 : 0
-    name         = "${var.prefix}-postgres-vm"
+    name         = "${var.prefix}-postgres-vm-${random_string.suffix.result}"
     machine_type = "e2-medium"
     zone         = var.zone
     tags         = ["postgres-server"]

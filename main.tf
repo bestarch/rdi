@@ -1,25 +1,42 @@
 # Provider Configuration
+terraform {
+  required_providers {
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.5"
+    }
+  }
+}
+
 provider "google" {
   project = var.project_id
   region  = var.region
 }
 
+resource "random_string" "suffix" {
+  length  = 6
+  special = false
+  upper   = false
+  lower   = true
+  numeric = true              
+}
+
 # VPC Configuration
 resource "google_compute_network" "vpc" {
-  name                    = "${var.prefix}-vpc"
+  name                    = "${var.prefix}-vpc-${random_string.suffix.result}"
   auto_create_subnetworks = false
 }
 
 # Subnetwork Configuration
 resource "google_compute_subnetwork" "subnet" {
-  name          = "${var.prefix}-subnet"
+  name          = "${var.prefix}-subnet-${random_string.suffix.result}"
   network       = google_compute_network.vpc.name
   ip_cidr_range = var.subnet_cidr
   region        = var.region
 }
 
 resource "google_compute_firewall" "tcp_firewall" {
-  name    = "${var.prefix}-tcp-firewall"
+  name    = "${var.prefix}-tcp-firewall-${random_string.suffix.result}"
   network = google_compute_network.vpc.name
   allow {
     protocol = "tcp"
@@ -31,7 +48,7 @@ resource "google_compute_firewall" "tcp_firewall" {
 ## Static External IPs for RDI Instances
 resource "google_compute_address" "rdi_static_ips" {
   count  = var.rdi_HA ? 2 : 1 
-  name   = "${var.prefix}-${count.index}-static-ip"
+  name   = "${var.prefix}-${count.index}-static-ip-${random_string.suffix.result}"
   region = var.region
 }
 
@@ -39,7 +56,7 @@ resource "google_compute_address" "rdi_static_ips" {
 # RDI Virtual Machine Instances
 resource "google_compute_instance" "rdi_instances" {
   count        = var.rdi_HA ? 2 : 1 
-  name         = "${var.prefix}-vm-${count.index}" 
+  name         = "${var.prefix}-vm-${count.index}-${random_string.suffix.result}" 
   zone         = var.zone
   machine_type = var.machine_type 
 
@@ -80,7 +97,7 @@ resource "google_compute_instance" "rdi_instances" {
  }
 
   # Hostname Configuration
-  hostname = "${var.prefix}-${count.index}-demo.redislabs.com"
+  hostname = "${var.prefix}-${count.index}-${random_string.suffix.result}-demo.redislabs.com"
 }
 
 
@@ -89,7 +106,7 @@ output "RDI_vm_output" {
     for idx, instance in google_compute_instance.rdi_instances:
     idx => {
       external_ip     = instance.network_interface[0].access_config[0].nat_ip
-      vm_name         = "${var.prefix}-vm-${idx}"
+      vm_name         = "${var.prefix}-vm-${idx}-${random_string.suffix.result}"
     }
   } 
   description = "Details of RDI instances including internal IP, external IP, FQDN, machine type, and disk size."

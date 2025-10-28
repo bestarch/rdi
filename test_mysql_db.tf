@@ -1,13 +1,13 @@
 resource "google_compute_address" "mysql_static_ip" {
   count = var.create_test_mysql_db ? 1 : 0
-  name   = "${var.prefix}-mysql-static-ip"
+  name   = "${var.prefix}-mysql-static-ip-${random_string.suffix.result}"
   region = var.region
   depends_on = [ google_compute_network.vpc ]
 }
 
 resource "google_compute_instance" "mysql_vm" {
     count = var.create_test_mysql_db ? 1 : 0
-    name         = "${var.prefix}-mysql-vm"
+    name         = "${var.prefix}-mysql-vm-${random_string.suffix.result}"
     machine_type = "e2-medium"
     zone         = var.zone
     tags         = ["mysql-server"]
