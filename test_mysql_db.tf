@@ -52,8 +52,6 @@ resource "google_compute_instance" "mysql_vm" {
             --name mysql_ecom_db \
             -e MYSQL_ROOT_PASSWORD=admin \
             -e MYSQL_DATABASE=sample_shop \
-            -e MYSQL_USER=root \
-            -e MYSQL_PASSWORD=admin \
             -p 3306:3306 \
             -v mysql_data:/var/lib/mysql \
             mysql:8.0 || true
