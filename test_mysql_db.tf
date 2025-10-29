@@ -88,7 +88,7 @@ resource "google_compute_instance" "mysql_vm" {
         # Export MySQL connection env vars (matches container run above)
         export MYSQL_HOST=127.0.0.1
         export MYSQL_PORT=3306
-        export MYSQL_USER=admin
+        export MYSQL_USER=root
         export MYSQL_PASSWORD=admin
 
         echo "Attempting to run ecom_db.py" >> $${log_file}
